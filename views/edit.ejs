@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit <%= pokemon.name %> | Pokedex</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>Edit <%= pokemon.name %>
+    </h1>
+    <form action="/pokemon/<%= pokemon.id %>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= pokemon.name %>">
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" value="<%= pokemon.type %>">
+        <label for="img">Image URL:</label>
+        <input type="text" name="img" id="img" value="<%= pokemon.img %>">
+        <label for="hp">HP:</label>
+        <input type="text" name="stats.hp" id="hp" value="<%= pokemon.stats.hp %>">
+        <label for="attack">Attack:</label>
+        <input type="text" name="stats.attack" id="attack" value="<%= pokemon.stats.attack %>">
+        <label for="defense">Defense:</label>
+        <input type="text" name="stats.defense" id="defense" value="<%= pokemon.stats.defense %>">
+        <button type="submit">Update</button>
+    </form>
+
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

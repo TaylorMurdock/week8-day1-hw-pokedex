@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <h1>Pokémon List</h1>
+    <a href="/pokemon/new">Add New Pokémon</a>
+    <ul>
+        <% pokemon.forEach(p=> { %>
+            <ul>
+                <a href="/pokemon/<%= p.id %>">
+                    <%= p.name %>
+                        <img src="<%= p.img %>" alt="<%= p.name %>">
+                </a>
+            </ul>
+            <% }); %>
+    </ul>
+
+
+
+</html>

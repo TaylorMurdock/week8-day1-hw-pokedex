@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= pokemon.name %> | Pokedex
+    </title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <h1>
+        <%= pokemon.name %>
+    </h1>
+    <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>" />
+    <ul>
+        <% if (pokemon.type && Array.isArray(pokemon.type)) { %>
+            <% pokemon.type.forEach(type=> { %>
+                <ul>
+                    <%= type %>
+                        </>
+                        <% }); %>
+                            <% } %>
+                </ul>
+
+                <table>
+                    <tr>
+                        <th>HP</th>
+                        <th>Attack</th>
+                        <th>Defense</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <%= pokemon.stats.hp %>
+                        </td>
+                        <td>
+                            <%= pokemon.stats.attack %>
+                        </td>
+                        <td>
+                            <%= pokemon.stats.defense %>
+                        </td>
+                    </tr>
+                </table>
+                <a href="/pokemon/<%= pokemon.id %>/edit">Edit</a>
+                <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+</body>
+
+</html>
